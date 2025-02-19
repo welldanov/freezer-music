@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    background-color: #000000;
+}
+
+.main-body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: #1c1920;
+}
+
+
+/* === sidebar === */
+.sidebar {
+    width: 270px;
+    height: 100%;
+    border-right: 0.0625rem solid #555257;
+    box-sizing: border-box;
+}
+
+.sidebar__logo-pages-container {
+    width: 100%;
+    /*height: 180px;*/
+    padding: 24px 0 16px 0;
+    border-bottom: 0.0625rem solid #555257;
+    box-sizing: border-box;
+}
+
+.streaming-logo {
+
+}
+
+.streaming-logo_spaced {
+    padding: 0 16px;
+    margin-bottom: 20px;
+}
+
+.streaming-logo__title, .streaming-logo__music {
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 35px;
+}
+
+.sidebar__page-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0 8px;
+}
+
+.page-link-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 0.5rem;
+    gap: 0.5rem;
+    transition: 0.15s;
+}
+
+.page-link-item:hover {
+    background-color: #29282d;
+}
+
+.page-link-item_chosen {
+    background-color: #29282d;
+}
+
+.page-link-item__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    line-height: 1em;
+    color: #ffffff;
+    vertical-align: middle;
+    fill: #ffffff!important;
+    svg {
+        fill: #ffffff!important;
+    }
+}
+
+
+/* === screen === */
+.main-page {
+    width: calc(100% - 270px);
+    height: 100%;
+    background-color: #100d14;
+    /*border-radius: 30px 0 0 30px;*/
+    opacity: 1;
+}
+
+.page-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    border-bottom: 1px solid #555257;
+    box-sizing: border-box;
+}
+
+.page-topbar_spaced {
+    padding: 16px;
+}
+
+.page-search {
+    width: 375px;
+}
+
+.page-search__container {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    border-radius: 8px;
+    padding: 0 20px;
+    background-color: #29282e;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.page-btn svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    line-height: 1em;
+    flex-shrink: 0;
+    color: #fff;
+    vertical-align: middle;
+    fill: #fff;
+}
+
+
+.page-search__input {
+    width: 100%;
+    height: 3rem;
+}
+
+.notification-profile {
+
+}
+
+.notification-profile__container {
+    display: flex;
+    gap: 15px;
+}
+
+.notification-profile__notification-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: 0.15s;
+}
+
+.notification-profile__notification-btn:hover {
+    background-color: #3a393d;
+}
+
+.notification-profile__profile-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #29282d;
+    transition: 0.3s;
+}
+
+.notification-profile__profile-btn:hover {
+    background-color: #232228;
+}
