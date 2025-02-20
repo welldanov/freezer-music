@@ -1,0 +1,8 @@
+@font-face {
+    font-display: swap;
+    font-family: "PBSEveryman";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../shared/assets/fonts/PBSEveryman/PBSEveryman-Regular.ttf"),
+    url("../../shared/assets/fonts/PBSEveryman/PBS Everyman.woff") format("woff");
+}
