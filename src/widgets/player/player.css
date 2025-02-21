@@ -1,0 +1,129 @@
+.player {
+	padding-inline: 16px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100vw;
+	height: 80px;
+	border-top: 1px solid var(--border-neutral-primary);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex: 0 0 33%;
+	gap: 16px;
+	background-color: var(--background-neutral-secondary);
+	z-index: 5;
+}
+
+.player-left {
+	width: 100%;
+	height: 48px;
+	justify-content: flex-start;
+	display: flex;
+	align-items: center;
+}
+
+.player-left__music-name {
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+
+.player-left__author {
+	line-height: 1.25rem;
+	font-size: 0.875rem;
+}
+
+.player-left__music-name:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.player-left__author:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.player-left__image {
+	height: 100%;
+	object-fit: contain;
+	border-radius: 3px;
+	border:1px solid var(--divider-neutral-primary)
+}
+
+.player-left__info {
+	margin-left: 8px;
+	font-weight: 400;
+	height: 44px;
+	font-family: Inter, sans-serif;
+}
+
+.player-left__actions {
+	height: 32px;
+	padding-left: 16px;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	fill: white;
+}
+
+.player-left__icon {
+	height: 32px;
+	width: 32px;
+	padding: 4px;
+	border-radius: 50%;
+	transition: background-color,fill 0.3s ease;
+}
+
+.player-left__icon:hover {
+	cursor: pointer;
+	background-color: var(--divider-neutral-primary);
+}
+
+.player-left__icon:active {
+	cursor: pointer;
+	fill: var(--purple);
+	background-color: unset;
+}
+
+.player-center {
+	width: 100%;
+	height: 56px;
+	display: flex;
+	flex-direction: column;
+}
+
+.player-right {
+	width: 100%;
+	height: 32px;
+	display: flex;
+	gap: 4px;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.player-right__icon {
+	height: 32px;
+	width: 32px;
+	padding: 4px;
+	border-radius: 50%;
+	fill: white;
+	transition: background-color,fill 0.3s ease;
+}
+
+.player-right__icon:hover {
+	cursor: pointer;
+	background-color: var(--divider-neutral-primary);
+}
+
+.player-right__icon:active {
+	cursor: pointer;
+	fill: var(--purple);
+	background-color: unset;
+}
+
+.player-right__volumePopover {
+}
+
+.player-right__settingsPopover {
+
+}

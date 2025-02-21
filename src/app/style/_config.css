@@ -1,4 +1,8 @@
 :root {
     --layout-sidebar-width: 272px;
     --tempo-fonts-body: Inter, Arial, sans-serif;
+    --background-neutral-secondary: #1b191f;
+    --divider-neutral-primary: #3a393d;
+    --border-neutral-primary: #555257;
+    --purple: rgba(181, 96, 255, 1);
 }
