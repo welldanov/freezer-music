@@ -1,0 +1,28 @@
+.main-page {
+    margin-left: var(--layout-sidebar-width);
+    width: 100%;
+    position: relative;
+    height: 100%;
+    background-color: #100d14;
+}
+
+.main-body-container {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0 65px;
+}
+
+.main-body-heading {
+    font-family: var(--tempo-fonts-display);
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 4.5rem;
+}
+
+.main-body-heading_spaced {
+    padding: 24px 0;
+}
+
+.page-link-title_section-spaced {
+    padding: 24px 0;
+}

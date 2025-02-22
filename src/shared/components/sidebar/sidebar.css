@@ -27,7 +27,7 @@
     margin-bottom: 20px;
 }
 
-.streaming-logo__title, .streaming-logo__music {
+.streaming-logo__title {
     font-family: "PBSEveryman", serif;
     font-weight: 400;
     font-size: 35px;
@@ -55,11 +55,8 @@
     background-color: #29282d;
 }
 
-.page-link-item:active svg, .page-link-item:active h2{
-    cursor: pointer;
-    fill: var(--color-scheme-main);
-    color: var(--color-scheme-main);
-    background-color: unset;
+.page-link-item:active {
+    background-color: #3a393e;
 }
 
 .page-link-item_chosen {
@@ -71,8 +68,7 @@
     width: 24px;
     height: 24px;
     line-height: 1em;
-    color: #fdfcfe;
-    fill: #fdfcfe;
+    fill: var(--color-scheme-ice);
     vertical-align: middle;
 }
 
