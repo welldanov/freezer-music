@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import "shared/components/sidebar/sidebar.css";
+@import "shared/components/topbar/topbar.css";
 @import "widgets/player/player.css";
+@import "widgets/genre-collections/genre-collections.css";
 
 body {
     font-family: var(--tempo-fonts-body);
@@ -12,184 +14,10 @@ body {
 }
 
 .main-body {
-    display: flex;
     height: 100vh;
-    width: 100vw;
-    background-color: #1c1920;
-}
-
-
-/* === sidebar === */
-.sidebar {
-    background: #1b191f;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: var(--layout-sidebar-width);
-    border-right: 0.0625rem solid #555257;
-    padding-bottom: 80px;
-    z-index: 1;
-}
-
-.sidebar__logo-pages-container {
-    width: 100%;
-    /*height: 180px;*/
-    padding: 24px 0 16px 0;
-    border-bottom: 0.0625rem solid #555257;
-    box-sizing: border-box;
-}
-
-.streaming-logo {
-
-}
-
-.streaming-logo_spaced {
-    padding: 0 16px;
-    margin-bottom: 20px;
-}
-
-.streaming-logo__title, .streaming-logo__music {
-    font-family: "PBSEveryman", serif;
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 35px;
-    color: #07ccbe;
-}
-
-.sidebar__page-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    padding: 0 8px;
-}
-
-.page-link-item {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    border-radius: 0.5rem;
-    gap: 0.5rem;
-    transition: 0.15s;
-}
-
-.page-link-item:hover {
-    background-color: #29282d;
-}
-
-.page-link-item_chosen {
-    background-color: #29282d;
-}
-
-.page-link-item__icon {
-    display: block;
-    width: 24px;
-    height: 24px;
-    line-height: 1em;
-    color: #fdfcfe;
-    fill: #fdfcfe;
-    vertical-align: middle;
-}
-
-.page-link-title {
-    font-family: var(--tempo-fonts-body);
-    font-weight: 700;
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    /*color: #fdfcfe;*/
-}
-
-
-/* === topbar === */
-.page-topbar {
-    display: flex;
-    position: fixed;
-    align-items: center;
-    justify-content: space-between;
-    right: 0;
-    top: 0;
-    height: 80px;
+    width: calc(100vw - var(--layout-sidebar-width));
     background-color: #0f0d13;
-    border-bottom: 1px solid #555257;
-    box-sizing: border-box;
-    left: var(--layout-sidebar-width);
-    min-width: 770px;
-    padding: 1rem;
-    z-index: 200;
-}
-
-.page-search {
-    width: 375px;
-}
-
-.page-search__container {
-    display: flex;
-    width: 100%;
-    gap: 5px;
-    border-radius: 8px;
-    padding: 0 20px;
-    background-color: #29282e;
-}
-
-.page-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-}
-
-.page-btn svg {
-    display: block;
-    width: 24px;
-    height: 24px;
-    line-height: 1em;
-    flex-shrink: 0;
-    color: #fff;
-    vertical-align: middle;
-    fill: #fff;
-}
-
-
-.page-search__input {
-    width: 100%;
-    height: 3rem;
-    font-family: var(--tempo-fonts-body);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5rem;
-
-}
-
-.notification-profile {
-
-}
-
-.notification-profile__container {
-    display: flex;
-    gap: 15px;
-}
-
-.notification-profile__notification-btn {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    transition: 0.15s;
-}
-
-.notification-profile__notification-btn:hover {
-    background-color: #3a393d;
-}
-
-.notification-profile__profile-btn {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: #29282d;
-    transition: 0.3s;
-}
-
-.notification-profile__profile-btn:hover {
-    background-color: #232228;
+    padding-top: 80px;
 }
 
 
@@ -200,4 +28,25 @@ body {
     position: relative;
     height: 100%;
     background-color: #100d14;
+}
+
+.main-body-container {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0 65px;
+}
+
+.main-body-heading {
+    font-family: var(--tempo-fonts-display);
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 4.5rem;
+}
+
+.main-body-heading_spaced {
+    padding: 24px 0;
+}
+
+.page-link-title_section-spaced {
+    padding: 24px 0;
 }

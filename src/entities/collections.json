@@ -1,0 +1,39 @@
+{
+  "genres" : {
+    "Brazilian Funk" : {
+      "cover" : "./shared/assets/img/covers/genre-playlists/brazilian-funk.jpg",
+      "tracks": 20,
+      "fans" : 120133,
+      "updated": "4 weeks ago",
+      "description": "Bangers for your soul."
+    },
+    "Drum and Bass": {
+      "cover" : "./shared/assets/img/covers/genre-playlists/drum-and-bass.png",
+      "tracks": 14,
+      "fans" : 95477,
+      "updated": "1 weeks ago",
+      "description": "Drum and Bass songs."
+    },
+    "Hip Hop": {
+      "cover" : "./shared/assets/img/covers/genre-playlists/hip-hop.png",
+      "tracks": 19,
+      "fans" : 123780,
+      "updated": "1 day ago",
+      "description": "..."
+    },
+    "Phonk": {
+      "cover" : "./shared/assets/img/covers/genre-playlists/phonk.jpg",
+      "tracks": 36,
+      "fans" : 239000,
+      "updated": "1 month ago",
+      "description": "..."
+    },
+    "Russian Rap": {
+      "cover" : "./shared/assets/img/covers/genre-playlists/russian-rap.jpeg",
+      "tracks": 14,
+      "fans" : 56711,
+      "updated": "12 days ago",
+      "description": "..."
+    }
+  }
+}

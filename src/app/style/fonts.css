@@ -1,6 +1,5 @@
-/**
- Ref: https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#common_weight_name_mapping
-*/
+/* Inter*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* Deezer Light */
 @font-face {
@@ -50,4 +49,14 @@
     font-weight: 800;
     src: url("../../shared/assets/fonts/DeezerProduct/DeezerProduct-Extrabold.woff2") format("woff2"),
     url("../../shared/assets/fonts/DeezerProduct/DeezerProduct-Extrabold.woff") format("woff");
+}
+
+/* ============================ */
+/* PBSEveryman Regular */
+@font-face {
+    font-display: swap;
+    font-family: "PBSEveryman";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../shared/assets/fonts/PBSEveryman/PBSEveryman-Regular.ttf");
 }

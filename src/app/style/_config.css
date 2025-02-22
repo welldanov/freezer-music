@@ -1,9 +1,12 @@
+@import "fonts.css";
+
 :root {
     --layout-sidebar-width: 272px;
-    --tempo-fonts-body: Inter, Arial, sans-serif;
+    --tempo-fonts-body: Inter, sans-serif;
+    --tempo-fonts-display: "Deezer Product", Tahoma, Arial, sans-serif;
     --background-neutral-secondary: #1b191f;
     --divider-neutral-primary: #3a393d;
     --border-neutral-primary: #555257;
     --purple: rgba(181, 96, 255, 1);
-    --black: #000;
+    --color-scheme-main: #07CCBEFF;
 }

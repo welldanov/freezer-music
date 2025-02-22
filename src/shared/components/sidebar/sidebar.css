@@ -1,0 +1,85 @@
+.sidebar {
+    background: #1b191f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--layout-sidebar-width);
+    border-right: 0.0625rem solid #555257;
+    padding-bottom: 80px;
+    z-index: 1;
+}
+
+.sidebar__logo-pages-container {
+    width: 100%;
+    /*height: 180px;*/
+    padding: 24px 0 16px 0;
+    border-bottom: 0.0625rem solid #555257;
+    box-sizing: border-box;
+}
+
+.streaming-logo {
+
+}
+
+.streaming-logo_spaced {
+    padding: 0 16px;
+    margin-bottom: 20px;
+}
+
+.streaming-logo__title, .streaming-logo__music {
+    font-family: "PBSEveryman", serif;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 35px;
+    color: var(--color-scheme-main);
+}
+
+.sidebar__page-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0 8px;
+}
+
+.page-link-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 0.5rem;
+    gap: 0.5rem;
+    transition: 0.15s;
+}
+
+.page-link-item:hover {
+    background-color: #29282d;
+}
+
+.page-link-item:active svg, .page-link-item:active h2{
+    cursor: pointer;
+    fill: var(--color-scheme-main);
+    color: var(--color-scheme-main);
+    background-color: unset;
+}
+
+.page-link-item_chosen {
+    background-color: #29282d;
+}
+
+.page-link-item__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    line-height: 1em;
+    color: #fdfcfe;
+    fill: #fdfcfe;
+    vertical-align: middle;
+}
+
+.page-link-title {
+    font-family: var(--tempo-fonts-body);
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    /*color: #fdfcfe;*/
+}
