@@ -5,8 +5,10 @@
     --tempo-fonts-body: Inter, sans-serif;
     --tempo-fonts-display: "Deezer Product", Tahoma, Arial, sans-serif;
     --background-neutral-secondary: #1b191f;
+    --background-neutral-secondary-hovered: #29282d;
     --divider-neutral-primary: #3a393d;
     --border-neutral-primary: #555257;
+    --color-scheme-gray: #a9a6aa;
     --color-scheme-ice: #E0F7FA;
     --color-scheme-sky: #B2EBF2;
     --color-scheme-water: #80DEEA;

@@ -2,6 +2,13 @@ export function volumeControl() {
   const slider = document.getElementById('rangeSlider');
   let prevValue = slider.value
   const volumeIcon = document.getElementById('volume-icon');
+  const volumePopover = document.getElementById('volume-popover');
+  const volumePopoverSquare = document.getElementById('volume-popover-square');
+  const settingsIcon = document.getElementById('player-settings');
+  const settingsPopover = document.getElementById('settings-popover');
+  const settingsPopoverSquare = document.getElementById('settings-popover-square');
+
+  let isSettingsOpen = false;
 
   function updateSliderValue() {
     if (Number(slider.value) === 0) slider.value = prevValue;
@@ -28,9 +35,62 @@ export function volumeControl() {
     }
   }
 
+  function onHoverVolume() {
+    volumePopover.style.display = "flex"
+    volumePopoverSquare.style.display = "block"
+    setTimeout(()=> {
+      volumePopover.classList.add("player-right__volume-popover_hover")
+      volumePopoverSquare.classList.add("player-right__volume-popover-square_hover")
+    },1)
+  }
+
+  function onLeaveVolume() {
+    volumePopover.classList.remove("player-right__volume-popover_hover")
+    volumePopoverSquare.classList.remove("player-right__volume-popover-square_hover")
+  }
+
+  function onClickSettings() {
+    if (!isSettingsOpen) {
+      settingsPopover.style.display = "block"
+      settingsIcon.style.fill = "var(--color-scheme-secondary)"
+      settingsPopoverSquare.style.display = "block"
+      setTimeout(()=> {
+        settingsPopover.style.opacity = "1"
+        settingsPopoverSquare.style.opacity = "1"
+      },1)
+    } else {
+      settingsPopover.style.opacity = "0"
+      settingsPopoverSquare.style.opacity = "0"
+      settingsIcon.style.fill = "#ffffff"
+    }
+    isSettingsOpen = !isSettingsOpen
+  }
+
+  function onClickWindow(e) {
+    if (e.srcElement.id !== "player-settings-icon") {
+      isSettingsOpen = false
+      settingsPopover.style.opacity = "0"
+      settingsPopoverSquare.style.opacity = "0"
+      settingsIcon.style.fill = "#ffffff"
+    }
+  }
+
 
   updateSliderBackground();
-
+  volumePopover.addEventListener('transitionend', () => {
+    if (!volumePopover.classList.contains('player-right__volume-popover_hover')) {
+        volumePopover.style.display = "none";
+        volumePopoverSquare.style.display = "none";
+    }
+  });
+  window.addEventListener("click", onClickWindow);
+  settingsIcon.addEventListener("click", onClickSettings);
+  volumeIcon.addEventListener("mouseenter", onHoverVolume);
+  volumePopover.addEventListener("mouseenter", onHoverVolume);
+  volumePopoverSquare.addEventListener("mouseenter", onHoverVolume);
+  volumeIcon.addEventListener("mouseleave", onLeaveVolume);
+  volumePopover.addEventListener("mouseleave", onLeaveVolume);
+  volumePopoverSquare.addEventListener("mouseleave", onLeaveVolume);
   volumeIcon.addEventListener('click', updateSliderValue);
   slider.addEventListener('input', updateSliderBackground);
   volumeIcon.addEventListener('click', updateSliderBackground);
