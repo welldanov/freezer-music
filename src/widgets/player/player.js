@@ -62,16 +62,24 @@ export function volumeControl() {
       settingsPopover.style.opacity = "0"
       settingsPopoverSquare.style.opacity = "0"
       settingsIcon.style.fill = "#ffffff"
+      setTimeout(()=> {
+        settingsPopover.style.display = "none"
+        settingsPopoverSquare.style.display = "none"
+      },300)
     }
     isSettingsOpen = !isSettingsOpen
   }
 
   function onClickWindow(e) {
-    if (e.srcElement.id !== "player-settings-icon") {
+    if (!e.composedPath().includes(settingsPopover) && !e.composedPath().includes(settingsIcon)) {
       isSettingsOpen = false
       settingsPopover.style.opacity = "0"
       settingsPopoverSquare.style.opacity = "0"
       settingsIcon.style.fill = "#ffffff"
+      setTimeout(()=> {
+        settingsPopover.style.display = "none"
+        settingsPopoverSquare.style.display = "none"
+      },300)
     }
   }
 
@@ -83,7 +91,6 @@ export function volumeControl() {
         volumePopoverSquare.style.display = "none";
     }
   });
-  window.addEventListener("click", onClickWindow);
   settingsIcon.addEventListener("click", onClickSettings);
   volumeIcon.addEventListener("mouseenter", onHoverVolume);
   volumePopover.addEventListener("mouseenter", onHoverVolume);
@@ -94,4 +101,5 @@ export function volumeControl() {
   volumeIcon.addEventListener('click', updateSliderValue);
   slider.addEventListener('input', updateSliderBackground);
   volumeIcon.addEventListener('click', updateSliderBackground);
+  window.addEventListener("click", onClickWindow);
 }

@@ -90,6 +90,34 @@
 	height: 56px;
 	display: flex;
 	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.player-center__icon {
+	height: 32px;
+	width: 32px;
+	padding: 4px;
+	border-radius: 50%;
+	fill: white;
+	transition: background-color .3s ease;
+
+	svg {
+		transition: fill .3s ease;
+	}
+}
+
+.player-center__icon:hover {
+	cursor: pointer;
+	background-color: var(--divider-neutral-primary);
+}
+
+.player-center__icon:active {
+	cursor: pointer;
+	background-color: unset;
+
+	svg {
+		fill: var(--color-scheme-secondary);
+	}
 }
 
 .player-right {
@@ -125,6 +153,11 @@
 	svg {
 		fill: var(--color-scheme-secondary);
 	}
+}
+
+.player-right__icon:hover {
+	cursor: pointer;
+	background-color: var(--divider-neutral-primary);
 }
 
 .player-right__volume-popover {
