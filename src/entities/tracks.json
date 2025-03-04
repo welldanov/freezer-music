@@ -1,0 +1,366 @@
+{
+  "1": {
+    "title": "GPS",
+    "album": "GPS",
+    "release_date": "11/09/2024",
+    "cover": "./shared/assets/img/covers/track-covers/Brevis, It's Different, Dragon Boys, Blueface - GPS.jpg",
+    "path": "./shared/assets/music/brazilian-funk/Brevis, It's Different, Dragon Boys, Blueface - GPS.mp3",
+    "artist_id": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "duration": 98.403265
+  },
+  "2": {
+    "title": "EMPTY FUNK",
+    "album": "EMPTY FUNK",
+    "release_date": "27/12/2024",
+    "cover": "./shared/assets/img/covers/track-covers/DJ Anemia, crier, sixnite - EMPTY FUNK.jpg",
+    "path": "./shared/assets/music/brazilian-funk/DJ Anemia, crier, sixnite - EMPTY FUNK.mp3",
+    "artist_id": [
+      5,
+      6,
+      7
+    ],
+    "duration": 121.70449
+  },
+  "3": {
+    "title": "OH MAH GAH!",
+    "album": "OH MAH GAH!",
+    "release_date": "14/02/2025",
+    "cover": "./shared/assets/img/covers/track-covers/SH3RWIN, viralune, MC LONE - OH MAH GAH!.jpg",
+    "path": "./shared/assets/music/brazilian-funk/SH3RWIN, viralune, MC LONE - OH MAH GAH!.mp3",
+    "artist_id": [
+      8,
+      9,
+      10
+    ],
+    "duration": 91.245714
+  },
+  "4": {
+    "title": "ZORYA",
+    "album": "ZORYA",
+    "release_date": "07/02/2025",
+    "cover": "./shared/assets/img/covers/track-covers/SHIPU, CLOUD ZERO, NCTS - ZORYA.jpg",
+    "path": "./shared/assets/music/brazilian-funk/SHIPU, CLOUD ZERO, NCTS - ZORYA.mp3",
+    "artist_id": [
+      11,
+      12,
+      13
+    ],
+    "duration": 134.894875
+  },
+  "5": {
+    "title": "ANGEL",
+    "album": "ANGEL",
+    "release_date": "21/06/2024",
+    "cover": "./shared/assets/img/covers/track-covers/SHIPU, CLOUD ZERO - ANGEL.jpg",
+    "path": "./shared/assets/music/brazilian-funk/SHIPU, CLOUD ZERO - ANGEL.mp3",
+    "artist_id": [
+      11,
+      12
+    ],
+    "duration": 99.73551
+  },
+  "6": {
+    "title": "FREAKS FUNK",
+    "album": "FREAKS FUNK",
+    "release_date": "06/12/2024",
+    "cover": "./shared/assets/img/covers/track-covers/SØMATIC - FREAKS FUNK.jpg",
+    "path": "./shared/assets/music/brazilian-funk/SØMATIC - FREAKS FUNK.wav",
+    "artist_id": [
+      14
+    ],
+    "duration": 98.181837
+  },
+  "7": {
+    "title": "Micrology! (Slowed Reverb)",
+    "album": "Micrology!",
+    "release_date": "04/10/2024",
+    "cover": "./shared/assets/img/covers/track-covers/TEENWXVE ANDROMEDA - Micrology! (Slowed  Reverb).jpg",
+    "path": "./shared/assets/music/brazilian-funk/TEENWXVE ANDROMEDA - Micrology! (Slowed  Reverb).mp3",
+    "artist_id": [
+      15,
+      16
+    ],
+    "duration": 125.596735
+  },
+  "8": {
+    "title": "ZIRKA ULTRAFUNK",
+    "album": "Russian Ultrafunk",
+    "release_date": "07/12/2024",
+    "cover": "./shared/assets/img/covers/track-covers/wharoxmane, satirin, FUNK DEMON, EVO - ZIRKA ULTRAFUNK.jpg",
+    "path": "./shared/assets/music/brazilian-funk/wharoxmane, satirin, FUNK DEMON, EVO - ZIRKA ULTRAFUNK.mp3",
+    "artist_id": [
+      17,
+      18,
+      19,
+      20
+    ],
+    "duration": 108.215147
+  },
+  "9": {
+    "title": "HEADS WILL ROLL (PR FUNK)",
+    "album": "HEADS WILL ROLL (PR FUNK)",
+    "release_date": "26/04/2024",
+    "cover": "./shared/assets/img/covers/track-covers/xlout, Pxlish Beatz - HEADS WILL ROLL (PR FUNK).jpg",
+    "path": "./shared/assets/music/brazilian-funk/xlout, Pxlish Beatz - HEADS WILL ROLL (PR FUNK).mp3",
+    "artist_id": [
+      21,
+      22
+    ],
+    "duration": 104.2352
+  },
+  "10": {
+    "title": "DERNIERE DANCE FUNK",
+    "album": "DERNIERE DANCE FUNK",
+    "release_date": "23/02/2024",
+    "cover": "./shared/assets/img/covers/track-covers/ZODIVK, YXUNGXROTICA, MC KRAKEN - DERNIERE DANCE FUNK.jpg",
+    "path": "./shared/assets/music/brazilian-funk/ZODIVK, YXUNGXROTICA, MC KRAKEN - DERNIERE DANCE FUNK.mp3",
+    "artist_id": [
+      23,
+      24,
+      25
+    ],
+    "duration": 91.512
+  },
+  "11": {
+    "title": "Piranha",
+    "album": "Piranha",
+    "release_date": "29/01/2022",
+    "cover": "./shared/assets/img/covers/track-covers/Cartoon, Jeja, pluuto - Piranha.jpg",
+    "path": "./shared/assets/music/drum-and-bass/Cartoon, Jeja, pluuto - Piranha.mp3",
+    "artist_id": [
+      26,
+      27,
+      28
+    ],
+    "duration": 187.608
+  },
+  "12": {
+    "title": "Bombalaya - Blooom Remix",
+    "album": "Bombalaya (Blooom Remix)",
+    "release_date": "16/05/2024",
+    "cover": "./shared/assets/img/covers/track-covers/DNMO, Wolfy Lights, Blooom - Bombalaya.jpg",
+    "path": "./shared/assets/music/drum-and-bass/DNMO, Wolfy Lights, Blooom - Bombalaya.mp3",
+    "artist_id": [
+      29,
+      30,
+      31
+    ],
+    "duration": 248.607347
+  },
+  "13": {
+    "title": "Out My Head",
+    "album": "Out My Head",
+    "release_date": "10/01/2025",
+    "cover": "./shared/assets/img/covers/track-covers/Freaks & Geeks, Flowidus - Out My Head.png",
+    "path": "./shared/assets/music/drum-and-bass/Freaks & Geeks, Flowidus - Out My Head.mp3",
+    "artist_id": [
+      32,
+      33
+    ],
+    "duration": 214.047347
+  },
+  "14": {
+    "title": "Flow",
+    "album": "Flow",
+    "release_date": "13/04/2023",
+    "cover": "./shared/assets/img/covers/track-covers/hayve - Flow.jpg",
+    "path": "./shared/assets/music/drum-and-bass/hayve - Flow.mp3",
+    "artist_id": [
+      34
+    ],
+    "duration": 203.7583
+  },
+  "15": {
+    "title": "Hey Ya!",
+    "album": "Hey Ya!",
+    "release_date": "13/12/2023",
+    "cover": "./shared/assets/img/covers/track-covers/LEOWI, Lucky Luke - Hey Ya!.jpg",
+    "path": "./shared/assets/music/drum-and-bass/LEOWI, Lucky Luke - Hey Ya!.mp3",
+    "artist_id": [
+      35,
+      36
+    ],
+    "duration": 188.607278
+  },
+  "16": {
+    "title": "Abyss",
+    "album": "Abyss",
+    "release_date": "17/11/2023",
+    "cover": "./shared/assets/img/covers/track-covers/Metrik - Abyss.jpg",
+    "path": "./shared/assets/music/drum-and-bass/Metrik - Abyss.mp3",
+    "artist_id": [
+      37
+    ],
+    "duration": 237.270204
+  },
+  "17": {
+    "title": "WORLDS AWAY",
+    "album": "CHALLENGER (DELUXE)",
+    "release_date": "18/10/2024",
+    "cover": "./shared/assets/img/covers/track-covers/REAPER, AMAGII, TINYKVT - WORLDS AWAY.jpg",
+    "path": "./shared/assets/music/drum-and-bass/REAPER, AMAGII, TINYKVT - WORLDS AWAY.mp3",
+    "artist_id": [
+      38,
+      39,
+      40
+    ],
+    "duration": 249.70449
+  },
+  "18": {
+    "title": "IMY (feat. Bella Renee)",
+    "album": "DISRUPTOR LP",
+    "release_date": "06/05/2022",
+    "cover": "./shared/assets/img/covers/track-covers/REAPER, Bella Renee - IMY.jpg",
+    "path": "./shared/assets/music/drum-and-bass/REAPER, Bella Renee - IMY.mp3",
+    "artist_id": [
+      38,
+      41
+    ],
+    "duration": 166.948571
+  },
+  "19": {
+    "title": "Can You Feel It",
+    "album": "Can You Feel It",
+    "release_date": "06/02/2017",
+    "cover": "./shared/assets/img/covers/track-covers/T-Mass, Enthic - Can You Feel It.jpg",
+    "path": "./shared/assets/music/drum-and-bass/T-Mass, Enthic - Can You Feel It.mp3",
+    "artist_id": [
+      42,
+      43
+    ],
+    "duration": 212.114275
+  },
+  "20": {
+    "title": "Mortals",
+    "album": "Mortals",
+    "release_date": "15/12/2016",
+    "cover": "./shared/assets/img/covers/track-covers/Warriyo - Mortals.jpg",
+    "path": "./shared/assets/music/drum-and-bass/Warriyo - Mortals.mp3",
+    "artist_id": [
+      44
+    ],
+    "duration": 228.388571
+  },
+  "21": {
+    "title": "MUDD",
+    "album": "MUDD",
+    "release_date": "02/09/2022",
+    "cover": "./shared/assets/img/covers/track-covers/$werve, Grioten, Day$okee - MUDD.jpeg",
+    "path": "./shared/assets/music/hip-hop/$werve, Grioten, Day$okee - MUDD.mp3",
+    "artist_id": [
+      45,
+      46,
+      47
+    ],
+    "duration": 141.768
+  },
+  "22": {
+    "title": "Stay With Me",
+    "album": "Stay With Me",
+    "release_date": "11/10/2020",
+    "cover": "./shared/assets/img/covers/track-covers/1nonly - Stay With Me.jpg",
+    "path": "./shared/assets/music/hip-hop/1nonly - Stay With Me.mp3",
+    "artist_id": [
+      48
+    ],
+    "duration": 141.56075
+  },
+  "23": {
+    "title": "Drop It Like It's Hot",
+    "album": "Drop It Like It's Hot",
+    "release_date": "31/05/2020",
+    "cover": "./shared/assets/img/covers/track-covers/HAARPER - Drop It Like It's Hot.jpg",
+    "path": "./shared/assets/music/hip-hop/HAARPER - Drop It Like It's Hot.mp3",
+    "artist_id": [
+      49
+    ],
+    "duration": 136.019592
+  },
+  "24": {
+    "title": "THE ALCHEMIST",
+    "album": "THE ALCHEMIST",
+    "release_date": "30/07/2020",
+    "cover": "./shared/assets/img/covers/track-covers/HAARPER - THE ALCHEMIST.jpg",
+    "path": "./shared/assets/music/hip-hop/HAARPER - THE ALCHEMIST.mp3",
+    "artist_id": [
+      49
+    ],
+    "duration": 116.715102
+  },
+  "25": {
+    "title": "Last Laugh",
+    "album": "Last Laugh",
+    "release_date": "21/04/2024",
+    "cover": "./shared/assets/img/covers/track-covers/iamjakehill - Last Laugh.jpeg",
+    "path": "./shared/assets/music/hip-hop/iamjakehill - Last Laugh.mp3",
+    "artist_id": [
+      50
+    ],
+    "duration": 118.032
+  },
+  "26": {
+    "title": "9mm",
+    "album": "Memphis Cult Vol. 6",
+    "release_date": "23/02/2023",
+    "cover": "./shared/assets/img/covers/track-covers/Memphis Cult, Groove Dealers, SPLYXER - 9mm.jpg",
+    "path": "./shared/assets/music/hip-hop/Memphis Cult, Groove Dealers, SPLYXER - 9mm.mp3",
+    "artist_id": [
+      51,
+      52,
+      53
+    ],
+    "duration": 86.859256
+  },
+  "27": {
+    "title": "Death Lotto",
+    "album": "Death Lotto",
+    "release_date": "11/07/2022",
+    "cover": "./shared/assets/img/covers/track-covers/ovg!, Grioten - Death Lotto.jpg",
+    "path": "./shared/assets/music/hip-hop/ovg!, Grioten - Death Lotto.mp3",
+    "artist_id": [
+      54,
+      46
+    ],
+    "duration": 133.929796
+  },
+  "28": {
+    "title": "Rave in the Grave",
+    "album": "Bohemian Psycho",
+    "release_date": "31/03/2019",
+    "cover": "./shared/assets/img/covers/track-covers/REDZED - Rave in the Grave.jpg",
+    "path": "./shared/assets/music/hip-hop/REDZED - Rave in the Grave.mp3",
+    "artist_id": [
+      55
+    ],
+    "duration": 145.16565
+  },
+  "29": {
+    "title": "lick!",
+    "album": "lick!",
+    "release_date": "09/08/2024",
+    "cover": "./shared/assets/img/covers/track-covers/Sadfriendd, Ghostface Playa - lick!.jpeg",
+    "path": "./shared/assets/music/hip-hop/Sadfriendd, Ghostface Playa - lick!.mp3",
+    "artist_id": [
+      56,
+      57
+    ],
+    "duration": 101.041633
+  },
+  "30": {
+    "title": "A HOCKEY MASK AND A REAL BAD ATTITUDE",
+    "album": "A HOCKEY MASK AND A REAL BAD ATTITUDE",
+    "release_date": "07/01/2022",
+    "cover": "./shared/assets/img/covers/track-covers/SXMPRA, Teddy Slugz - A HOCKEY MASK AND A REAL BAD ATTITUDE.jpeg",
+    "path": "./shared/assets/music/hip-hop/SXMPRA, Teddy Slugz - A HOCKEY MASK AND A REAL BAD ATTITUDE.mp3",
+    "artist_id": [
+      58,
+      59
+    ],
+    "duration": 133.903678
+  }
+}

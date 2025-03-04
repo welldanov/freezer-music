@@ -1,0 +1,14 @@
+.main-body-heading {
+    font-family: var(--tempo-fonts-display);
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 4.5rem;
+}
+
+.main-body-heading_spaced {
+    margin-bottom: 24px;
+}
+
+.page-link-title_section-spaced {
+    padding: 24px 0;
+}

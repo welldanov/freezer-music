@@ -26,6 +26,11 @@
     border-radius: 8px;
     padding: 0 20px;
     background-color: #29282e;
+    transition: background-color 200ms;
+}
+
+.page-search__container:hover {
+    background-color: #3a393e;
 }
 
 .page-btn {

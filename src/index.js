@@ -1,6 +1,8 @@
 import {renderFunction} from "./shared/lib/renderFunction.js";
 import {volumeControl} from "./widgets/player/player.js";
-import {genreCollectionRender} from "./widgets/genre-collections/genre-collections.js";
+import {genreCollectionRender} from "./widgets/genre-playlists/genre-playlists.js";
+
+import {playlistPageRender} from "./pages/playlist-page/playlist-page.js";
 
 
 renderFunction('./shared/components/sidebar/sidebar.html', 'sidebar').then();
@@ -8,8 +10,10 @@ renderFunction('./shared/components/topbar/topbar.html', 'page-topbar').then();
 renderFunction('./widgets/player/player.html', 'player').then(() => {
     volumeControl()
 });
-genreCollectionRender().then();
-
+renderFunction('./pages/explore-page/explore-page.html', 'main-body-container').then(() => {
+    genreCollectionRender().then();
+});
+// playlistPageRender().then();
 
 
 

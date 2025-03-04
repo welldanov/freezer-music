@@ -1,8 +1,15 @@
 @import "shared/components/sidebar/sidebar.css";
+
 @import "shared/components/topbar/topbar.css";
+
 @import "widgets/player/player.css";
-@import "widgets/main-page/main-page.css";
-@import "widgets/genre-collections/genre-collections.css";
+
+@import "pages/explore-page/explore-page.css";
+@import "widgets/genre-playlists/genre-playlists.css";
+
+@import "pages/playlist-page/playlist-page.css";
+@import "widgets/playlist-info/playlist-info.css";
+@import "widgets/playlist-tracks/playlist-tracks.css";
 
 body {
     font-family: var(--tempo-fonts-body);
@@ -15,8 +22,22 @@ body {
 }
 
 .main-body {
-    height: 100vh;
+    min-height: 100vh;
     width: calc(100vw - var(--layout-sidebar-width));
     background-color: #0f0d13;
-    padding-top: 80px;
+    padding: 80px 0;
+}
+
+.main-page {
+    margin-left: var(--layout-sidebar-width);
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    background-color: #100d14;
+}
+
+#main-body-container {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 24px 65px;
 }
