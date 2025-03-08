@@ -132,7 +132,18 @@
 
 .player-center__play-pause {
 	border-radius: 50%;
-	background-color: var(--color-scheme-secondary);
+	background-color: var(--color-scheme-background);
+}
+
+.player-center__play-pause:hover {
+    background-color: #49a3ba;
+}
+
+.player-center__play-pause:active {
+	svg {
+		fill: #fff;
+	}
+    background-color: #57b7cf;
 }
 
 .player-progress {

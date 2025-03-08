@@ -103,3 +103,33 @@ export function volumeControl() {
   volumeIcon.addEventListener('click', updateSliderBackground);
   window.addEventListener("click", onClickWindow);
 }
+
+export async function setPlayerController(playlistId, trackId) {
+  let playlist = await fetch("./entities/playlists.json").then(res => res.json())
+  let tracks = await fetch("./entities/tracks.json").then(res => res.json())
+  let artists = await fetch("./entities/artists.json").then(res => res.json())
+
+  let playlistTracks = playlist.genres[playlistId].tracks;
+
+  let currId = playlistTracks.indexOf(Number(trackId));
+  let currName = tracks[trackId].title
+  let currCover = tracks[trackId].cover
+  let currPath = tracks[trackId].path
+  let currArtists = (tracks[trackId].artist_id).map(id => artists[id].name);
+
+  setPlayerService(currName, currCover, currPath, currArtists);
+}
+
+function setPlayerService(name, cover, trackPath, artists) {
+  let playerImage = document.getElementById("player-image");
+  let playerMusicName = document.getElementById("player-music-name");
+  let playerArtist = document.getElementById("player-artist");
+  let playerTimeSlider = document.getElementById("timeSlider");
+  let playerTimeLeft = document.getElementById("player-time-left");
+  let playerTimeRight = document.getElementById("player-time-right");
+
+  playerImage.src = cover;
+  playerMusicName.textContent = name;
+  playerArtist.textContent = artists.join(", ");
+
+}
