@@ -127,9 +127,54 @@ function setPlayerService(name, cover, trackPath, artists) {
   let playerTimeSlider = document.getElementById("timeSlider");
   let playerTimeLeft = document.getElementById("player-time-left");
   let playerTimeRight = document.getElementById("player-time-right");
+  let playPauseBtn = document.getElementById("play-pause");
 
+  // playerTimeSlider.value = 0
+  let isPlaying = false;
+
+  const myAudio =  new Audio(trackPath);
+  myAudio.addEventListener("loadeddata", () => {
+    let audioDuration = Math.floor(myAudio.duration)
+    const formatTime = (time) => (time < 10 ? `0${time}` : time)
+    const minutes = formatTime(Math.floor(myAudio.duration / 60))
+    const seconds = formatTime(Math.floor(audioDuration - minutes * 60))
+    playerTimeRight.textContent = `${minutes}:${seconds}`;
+  })
+
+  function audioUpdateHandler() {
+    myAudio.addEventListener("timeupdate", ({target}) => {
+      playerTimeSlider.value = (target.currentTime / myAudio.duration) * 100;
+      playerTimeSlider.style.setProperty('--time-value', `${(target.currentTime / myAudio.duration) * 100}%`);
+      const formatTime = (time) => (time < 10 ? `0${time}` : time)
+      const minutes = formatTime(Math.floor(myAudio.currentTime / 60))
+      const seconds = formatTime(Math.floor(myAudio.currentTime % 60))
+      playerTimeLeft.textContent = `${minutes}:${seconds}`;
+    })
+  }
+
+  audioUpdateHandler(myAudio)
   playerImage.src = cover;
   playerMusicName.textContent = name;
   playerArtist.textContent = artists.join(", ");
 
+  function updateSlider() {
+    const value = (playerTimeSlider.value - playerTimeSlider.min) / (playerTimeSlider.max - playerTimeSlider.min) * 100;
+    playerTimeSlider.style.setProperty('--time-value', `${value}%`);
+    myAudio.currentTime = (playerTimeSlider.value / 100) * myAudio.duration;
+    playerTimeLeft.textContent = `${playerTimeSlider.value}%`;
+  }
+
+  function HandlePlayer() {
+    if (isPlaying) {
+      myAudio.pause()
+      isPlaying = false
+    } else {
+      myAudio.play()
+      console.log(myAudio)
+      isPlaying = true;
+    }
+  }
+
+  playPauseBtn.addEventListener("click", HandlePlayer)
+  playerTimeSlider.addEventListener('input', updateSlider);
 }
