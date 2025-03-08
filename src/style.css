@@ -23,13 +23,16 @@ body {
 
 .main-body {
     min-height: 100vh;
-    width: calc(100vw - var(--layout-sidebar-width));
+    width: 100%;
+    /*margin-left: var(--layout-sidebar-width);*/
+    /*width: calc(100vw - var(--layout-sidebar-width));*/
     background-color: #0f0d13;
     padding: 80px 0;
 }
 
 .main-page {
-    margin-left: var(--layout-sidebar-width);
+    padding-left: var(--layout-sidebar-width);
+    /*width: calc(100vw - var(--layout-sidebar-width));*/
     width: 100%;
     min-height: 100%;
     position: relative;
