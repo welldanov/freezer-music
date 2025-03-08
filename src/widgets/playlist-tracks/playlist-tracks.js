@@ -154,7 +154,13 @@ export async function playlistTracksRender(playlistId, tracksIds) {
                 </div>
             `
             playlistTracks.insertAdjacentHTML('beforeend', html);
-            document.getElementById(`play-button${trackId}`).addEventListener('click', () => setData(id, playlistId));
+            document.getElementById(`play-button${trackId}`).addEventListener('click', () => {
+                let playerTimeSlider = document.getElementById("timeSlider");
+                let playerTimeLeft = document.getElementById("player-time-left");
+                playerTimeSlider.style.setProperty('--time-value', `0`);
+                playerTimeLeft.textContent = `00:00`;
+                setData(id, playlistId)
+            });
         }
     }catch (error) {
         console.error("Ошибка при загрузке длительности треков:", error);

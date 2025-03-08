@@ -30,11 +30,17 @@
 .player-left__music-name {
 	font-size: 1rem;
 	line-height: 1.5rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .player-left__author {
 	line-height: 1.25rem;
 	font-size: 0.875rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .player-left__music-name:hover {
@@ -55,6 +61,7 @@
 }
 
 .player-left__info {
+	overflow: hidden;
 	margin-left: 8px;
 	font-weight: 400;
 	height: 44px;

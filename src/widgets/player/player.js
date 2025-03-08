@@ -117,10 +117,10 @@ export async function setPlayerController(playlistId, trackId) {
   let currPath = tracks[trackId].path
   let currArtists = (tracks[trackId].artist_id).map(id => artists[id].name);
 
-  setPlayerService(currName, currCover, currPath, currArtists);
+  setPlayerService(currName, currCover, currPath, currArtists, trackId);
 }
 
-function setPlayerService(name, cover, trackPath, artists) {
+function setPlayerService(name, cover, trackPath, artists, trackId) {
   let playerImage = document.getElementById("player-image");
   let playerMusicName = document.getElementById("player-music-name");
   let playerArtist = document.getElementById("player-artist");
@@ -129,7 +129,7 @@ function setPlayerService(name, cover, trackPath, artists) {
   let playerTimeRight = document.getElementById("player-time-right");
   let playPauseBtn = document.getElementById("play-pause");
 
-  // playerTimeSlider.value = 0
+  playerTimeSlider.value = 0
   let isPlaying = false;
 
   const myAudio =  new Audio(trackPath);
@@ -141,18 +141,24 @@ function setPlayerService(name, cover, trackPath, artists) {
     playerTimeRight.textContent = `${minutes}:${seconds}`;
   })
 
-  function audioUpdateHandler() {
+  function audioUpdateHandler(trackId) {
     myAudio.addEventListener("timeupdate", ({target}) => {
-      playerTimeSlider.value = (target.currentTime / myAudio.duration) * 100;
-      playerTimeSlider.style.setProperty('--time-value', `${(target.currentTime / myAudio.duration) * 100}%`);
-      const formatTime = (time) => (time < 10 ? `0${time}` : time)
-      const minutes = formatTime(Math.floor(myAudio.currentTime / 60))
-      const seconds = formatTime(Math.floor(myAudio.currentTime % 60))
-      playerTimeLeft.textContent = `${minutes}:${seconds}`;
+      let track = localStorage.getItem("trackId");
+      if (track === trackId) {
+        playerTimeSlider.value = (target.currentTime / myAudio.duration) * 100;
+        playerTimeSlider.style.setProperty('--time-value', `${(target.currentTime / myAudio.duration) * 100}%`);
+        const formatTime = (time) => (time < 10 ? `0${time}` : time)
+        const minutes = formatTime(Math.floor(myAudio.currentTime / 60))
+        const seconds = formatTime(Math.floor(myAudio.currentTime % 60))
+        playerTimeLeft.textContent = `${minutes}:${seconds}`;
+      } else {
+        myAudio.currentTime = 0
+        myAudio.pause()
+      }
     })
   }
 
-  audioUpdateHandler(myAudio)
+  audioUpdateHandler(trackId)
   playerImage.src = cover;
   playerMusicName.textContent = name;
   playerArtist.textContent = artists.join(", ");
@@ -164,17 +170,21 @@ function setPlayerService(name, cover, trackPath, artists) {
     playerTimeLeft.textContent = `${playerTimeSlider.value}%`;
   }
 
-  function HandlePlayer() {
+  function HandlePlayer(trackId) {
+    let track = localStorage.getItem("trackId");
+    let time = localStorage.getItem("pauseTime")
     if (isPlaying) {
+      localStorage.setItem("pauseTime", myAudio.currentTime.toFixed(2).toString())
       myAudio.pause()
       isPlaying = false
-    } else {
+    } else if (track === trackId && (myAudio.currentTime.toFixed(2).toString() === time || myAudio.currentTime === 0)) {
       myAudio.play()
-      console.log(myAudio)
       isPlaying = true;
     }
+    console.log(myAudio.currentTime)
+    console.log(time)
   }
 
-  playPauseBtn.addEventListener("click", HandlePlayer)
+  playPauseBtn.addEventListener("click", () => HandlePlayer(trackId))
   playerTimeSlider.addEventListener('input', updateSlider);
 }
