@@ -186,6 +186,13 @@
 	width: 100%;
 }
 
+.player-center_check {
+	width: 0;
+	height: 0;
+	overflow: hidden;
+
+}
+
 .player-center__time-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;

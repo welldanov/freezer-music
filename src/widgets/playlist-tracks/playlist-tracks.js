@@ -98,6 +98,7 @@ export async function playlistTracksRender(playlistId, tracksIds) {
     let playerTimeLeft = document.getElementById("player-time-left");
     let playerTimeRight = document.getElementById("player-time-right");
     let playPauseBtn = document.getElementById("play-pause");
+    let playerCheck = document.getElementById("check-player");
 
     // получаем данные из JSON Tracks
     let playlist = await fetch("./entities/playlists.json").then(res => res.json())
@@ -172,9 +173,19 @@ export async function playlistTracksRender(playlistId, tracksIds) {
         }
     }
 
-    playPauseBtn.addEventListener("click", HandlePlayer)
-    playerTimeSlider.addEventListener('input', updateSlider)
+    function changeIcon() {
+        if(!isPlaying) {
+            playPauseBtn.innerHTML = `<svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-mpq5dm" data-testid="PlayFilledIcon"><path d="M16.04 9.009a93.31 93.31 0 0 0-5.18-2.992 85.246 85.246 0 0 0-3.861-1.945.756.756 0 0 0-1.075.62 85.122 85.122 0 0 0-.246 4.317 92.993 92.993 0 0 0 0 5.982c.048 1.492.131 2.935.246 4.316.043.524.6.845 1.074.62a85.293 85.293 0 0 0 3.861-1.944 93.24 93.24 0 0 0 5.181-2.992 85.086 85.086 0 0 0 3.652-2.396.725.725 0 0 0 0-1.19A84.99 84.99 0 0 0 16.04 9.01Z"></path></svg>`;
+        } else {
+            playPauseBtn.innerHTML =`<svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-mpq5dm" data-testid="PauseFilledIcon"><path fill-rule="evenodd" d="M5.001 11.58c.02-2.585.249-4.847.55-6.753A.97.97 0 0 1 6.503 4H11v16H6.521a.968.968 0 0 1-.95-.823A45.403 45.403 0 0 1 5 11.579ZM17.48 4c.468 0 .873.344.95.823a45.4 45.4 0 0 1 .57 7.598 45.347 45.347 0 0 1-.55 6.752.97.97 0 0 1-.951.827H13V4h4.479Z" clip-rule="evenodd"></path></svg>`
+        }
+    }
 
+
+    playPauseBtn.addEventListener("click", () => {
+        HandlePlayer()
+    })
+    playerTimeSlider.addEventListener('input', updateSlider)
     // Сборка html
     try {
         let trackId = 0;
@@ -237,8 +248,16 @@ export async function playlistTracksRender(playlistId, tracksIds) {
                 playerTimeSlider.style.setProperty('--time-value', `0`);
                 playerTimeLeft.textContent = `00:00`;
                 updateTrack(id, playlistId)
+                playerCheck.checked = true
+                playerCheck.dispatchEvent(new Event('change'));
+
                 styleActiveTrack(id);
             });
+            playPauseBtn.addEventListener("click", () => {
+                if (playerCheck.checked) {
+                    changeIcon()
+                }
+            })
         }
     }catch (error) {
         console.error("Ошибка при загрузке длительности треков:", error);
