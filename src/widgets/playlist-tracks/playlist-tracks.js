@@ -1,5 +1,4 @@
 import {trackDurationConverter} from "../../shared/lib/trackDurationConverter.js";
-import {setData} from "../../shared/lib/localStorageController.js";
 
 // получаем данные из JSON Artists
 const response = await fetch("./entities/artists.json");
@@ -92,11 +91,89 @@ export async function playlistTracksRender(playlistId, tracksIds) {
 
     let html = ``;
     let playlistTracks = document.querySelector("#playlist-tracks");
+    let playerImage = document.getElementById("player-image");
+    let playerMusicName = document.getElementById("player-music-name");
+    let playerArtist = document.getElementById("player-artist");
+    let playerTimeSlider = document.getElementById("timeSlider");
+    let playerTimeLeft = document.getElementById("player-time-left");
+    let playerTimeRight = document.getElementById("player-time-right");
+    let playPauseBtn = document.getElementById("play-pause");
 
     // получаем данные из JSON Tracks
-    const response = await fetch("./entities/tracks.json");
-    const data = await response.json();
-    const tracks = JSON.parse(JSON.stringify(data));
+    let playlist = await fetch("./entities/playlists.json").then(res => res.json())
+    let tracks = await fetch("./entities/tracks.json").then(res => res.json())
+    let artists = await fetch("./entities/artists.json").then(res => res.json())
+
+
+    let currPlaylistTracks = playlist.genres[playlistId].tracks;
+    let currId = null
+    let currName = null
+    let currCover = null
+    let trackPath = null
+    let currArtists = null
+
+    let myAudio = null
+    let isPlaying = false
+
+    function updateTrack(trackId) {
+        currId = currPlaylistTracks.indexOf(Number(trackId));
+        currName = tracks[trackId].title
+        currCover = tracks[trackId].cover
+        trackPath = tracks[trackId].path
+        currArtists = (tracks[trackId].artist_id).map(id => artists[id].name);
+
+        playerImage.src = currCover;
+        playerMusicName.textContent = currName;
+        playerArtist.textContent = currArtists.join(", ");
+        playerTimeSlider.value = 0
+        if (isPlaying) {
+            myAudio.pause()
+        }
+
+        localStorage.setItem("trackId", trackId);
+        localStorage.setItem("playlistId", playlistId);
+        localStorage.setItem("isHandled", "1");
+        localStorage.setItem("tracksQueue", currPlaylistTracks);
+
+        myAudio =  new Audio(trackPath);
+        myAudio.play();
+        isPlaying = true;
+        myAudio.addEventListener("loadeddata", () => {
+            let audioDuration = Math.floor(myAudio.duration)
+            const formatTime = (time) => (time < 10 ? `0${time}` : time)
+            const minutes = formatTime(Math.floor(myAudio.duration / 60))
+            const seconds = formatTime(Math.floor(audioDuration - minutes * 60))
+            playerTimeRight.textContent = `${minutes}:${seconds}`;
+        })
+
+        myAudio.addEventListener("timeupdate", ({target}) => {
+            playerTimeSlider.value = (target.currentTime / myAudio.duration) * 100;
+            playerTimeSlider.style.setProperty('--time-value', `${(target.currentTime / myAudio.duration) * 100}%`);
+            const formatTime = (time) => (time < 10 ? `0${time}` : time)
+            const minutes = formatTime(Math.floor(myAudio.currentTime / 60))
+            const seconds = formatTime(Math.floor(myAudio.currentTime % 60))
+            playerTimeLeft.textContent = `${minutes}:${seconds}`;
+        })
+    }
+
+    function updateSlider() {
+        const value = (playerTimeSlider.value - playerTimeSlider.min) / (playerTimeSlider.max - playerTimeSlider.min) * 100;
+        myAudio.currentTime = (playerTimeSlider.value / 100) * myAudio.duration;
+        playerTimeLeft.textContent = `${playerTimeSlider.value}%`;
+    }
+
+    function HandlePlayer() {
+        if (isPlaying) {
+            isPlaying = false
+            myAudio.pause()
+        } else {
+            myAudio.play()
+            isPlaying = true
+        }
+    }
+
+    playPauseBtn.addEventListener("click", HandlePlayer)
+    playerTimeSlider.addEventListener('input', updateSlider)
 
     // Сборка html
     try {
@@ -159,7 +236,8 @@ export async function playlistTracksRender(playlistId, tracksIds) {
                 let playerTimeLeft = document.getElementById("player-time-left");
                 playerTimeSlider.style.setProperty('--time-value', `0`);
                 playerTimeLeft.textContent = `00:00`;
-                setData(id, playlistId)
+                updateTrack(id, playlistId)
+                styleActiveTrack(id);
             });
         }
     }catch (error) {

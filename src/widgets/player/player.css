@@ -181,7 +181,7 @@
 .player-center__time-slider {
 	--time-value: 0;
 	-webkit-appearance: none;
-	background: linear-gradient(to right, var(--color-scheme-secondary) 0%, var(--color-scheme-secondary) var(--time-value), white var(--time-value), white 100%);
+	background-color: white;
 	height: 2px;
 	width: 100%;
 }

@@ -10,7 +10,7 @@ renderFunction('./shared/components/sidebar/sidebar.html', 'sidebar').then();
 renderFunction('./shared/components/topbar/topbar.html', 'page-topbar').then();
 renderFunction('./widgets/player/player.html', 'player').then(() => {
     volumeControl()
-    renderData()
+    renderData(true)
 });
 renderFunction('./pages/explore-page/explore-page.html', 'main-body-container').then(() => {
     genreCollectionRender().then();
