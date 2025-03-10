@@ -1,5 +1,5 @@
 import {renderFunction} from "./shared/lib/renderFunction.js";
-import {volumeControl} from "./widgets/player/player.js";
+import {setRepeat, volumeControl} from "./widgets/player/player.js";
 import {genreCollectionRender} from "./widgets/genre-playlists/genre-playlists.js";
 import {renderData} from "./shared/lib/localStorageController.js";
 
@@ -11,6 +11,7 @@ renderFunction('./shared/components/topbar/topbar.html', 'page-topbar').then();
 renderFunction('./widgets/player/player.html', 'player').then(() => {
     volumeControl()
     renderData(true)
+    setRepeat()
 });
 renderFunction('./pages/explore-page/explore-page.html', 'main-body-container').then(() => {
     genreCollectionRender().then();

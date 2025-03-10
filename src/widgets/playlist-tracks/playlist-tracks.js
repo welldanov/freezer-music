@@ -99,6 +99,8 @@ export async function playlistTracksRender(playlistId, tracksIds) {
     let playerTimeRight = document.getElementById("player-time-right");
     let playPauseBtn = document.getElementById("play-pause");
     let playerCheck = document.getElementById("check-player");
+    let nextTrack = document.getElementById("next-track");
+    let prevTrack = document.getElementById("prev-track");
 
     // получаем данные из JSON Tracks
     let playlist = await fetch("./entities/playlists.json").then(res => res.json())
@@ -116,13 +118,45 @@ export async function playlistTracksRender(playlistId, tracksIds) {
     let myAudio = null
     let isPlaying = false
 
+    function switchTrackRight() {
+        let playerCheck = document.getElementById("check-player");
+        if (playerCheck.checked) {
+            let tracksQueue = localStorage.getItem("tracksQueue");
+            updateTrack(tracksQueue.split(",")[1])
+            localStorage.setItem("trackId", tracksQueue.split(",")[1]);
+            styleActiveTrack(tracksQueue.split(",")[1])
+            localStorage.setItem("tracksQueue", [...tracksQueue.split(",").slice(1), tracksQueue.split(",")[0]].toString());
+            tracksQueue = localStorage.getItem("tracksQueue");
+            changeIcon()
+        }
+    }
+
+    nextTrack.addEventListener("click", () => {
+        switchTrackRight()
+    })
+
+    function switchTrackLeft() {
+        let playerCheck = document.getElementById("check-player");
+        if (playerCheck.checked) {
+            let tracksQueue = localStorage.getItem("tracksQueue");
+            updateTrack(tracksQueue.split(",")[tracksQueue.split(",").length - 1])
+            localStorage.setItem("trackId", tracksQueue.split(",")[tracksQueue.split(",").length - 1]);
+            styleActiveTrack(tracksQueue.split(",")[tracksQueue.split(",").length - 1])
+            localStorage.setItem("tracksQueue", [tracksQueue.split(",")[tracksQueue.split(",").length - 1], ...tracksQueue.split(",").slice(0, tracksQueue.split(",").length - 1)].toString());
+            changeIcon()
+        }
+    }
+
+    prevTrack.addEventListener("click", () => {
+        switchTrackLeft()
+    })
+
     function updateTrack(trackId) {
         currId = currPlaylistTracks.indexOf(Number(trackId));
         currName = tracks[trackId].title
         currCover = tracks[trackId].cover
         trackPath = tracks[trackId].path
         currArtists = (tracks[trackId].artist_id).map(id => artists[id].name);
-
         playerImage.src = currCover;
         playerMusicName.textContent = currName;
         playerArtist.textContent = currArtists.join(", ");
@@ -134,8 +168,7 @@ export async function playlistTracksRender(playlistId, tracksIds) {
         localStorage.setItem("trackId", trackId);
         localStorage.setItem("playlistId", playlistId);
         localStorage.setItem("isHandled", "1");
-        localStorage.setItem("tracksQueue", currPlaylistTracks);
-
+        localStorage.setItem("tracksQueue", [...currPlaylistTracks.slice(currId), ...currPlaylistTracks.slice(0, currId)].toString());
         myAudio =  new Audio(trackPath);
         myAudio.play();
         isPlaying = true;
@@ -154,6 +187,17 @@ export async function playlistTracksRender(playlistId, tracksIds) {
             const minutes = formatTime(Math.floor(myAudio.currentTime / 60))
             const seconds = formatTime(Math.floor(myAudio.currentTime % 60))
             playerTimeLeft.textContent = `${minutes}:${seconds}`;
+        })
+
+        myAudio.addEventListener("ended", ({target}) => {
+            let playerCheck = document.getElementById("check-player");
+            if (playerCheck.checked) {
+                switchTrackRight()
+            }
+            else {
+                myAudio.currentTime = 0
+                myAudio.pause()
+            }
         })
     }
 
@@ -250,7 +294,7 @@ export async function playlistTracksRender(playlistId, tracksIds) {
                 updateTrack(id, playlistId)
                 playerCheck.checked = true
                 playerCheck.dispatchEvent(new Event('change'));
-
+                changeIcon()
                 styleActiveTrack(id);
             });
             playPauseBtn.addEventListener("click", () => {

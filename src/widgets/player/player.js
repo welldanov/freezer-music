@@ -1,3 +1,5 @@
+import {styleActiveTrack} from "../playlist-tracks/playlist-tracks.js";
+
 export function volumeControl() {
   const slider = document.getElementById('rangeSlider');
   let prevValue = slider.value
@@ -104,23 +106,47 @@ export function volumeControl() {
   window.addEventListener("click", onClickWindow);
 }
 
-export async function setPlayerController(playlistId, trackId, tracksQueue) {
+
+export async function setPlayerController(playlistId, trackId, toPlay = false) {
   let playlist = await fetch("./entities/playlists.json").then(res => res.json())
   let tracks = await fetch("./entities/tracks.json").then(res => res.json())
   let artists = await fetch("./entities/artists.json").then(res => res.json())
-
   let playlistTracks = playlist.genres[playlistId].tracks;
 
-  let currId = playlistTracks.indexOf(Number(trackId));
+
   let currName = tracks[trackId].title
   let currCover = tracks[trackId].cover
   let currPath = tracks[trackId].path
   let currArtists = (tracks[trackId].artist_id).map(id => artists[id].name);
 
-  setPlayerService(currName, currCover, currPath, currArtists, trackId);
+  setPlayerService(currName, currCover, currPath, currArtists, trackId, toPlay);
 }
 
-function setPlayerService(name, cover, trackPath, artists, trackId) {
+export function setRepeat () {
+  localStorage.setItem("repeat", "no")
+  let repeatIcon = document.getElementById("repeat-track");
+  repeatIcon.addEventListener("click", toggleRepeat)
+}
+
+
+function toggleRepeat () {
+  let repeatIcon = document.getElementById("repeat-track");
+  let repeat = localStorage.getItem("repeat");
+  if (repeat === "no") {
+      repeatIcon.style.fill = "var(--color-scheme-secondary)"
+      localStorage.setItem("repeat", "album")
+  } else if (repeat === "album") {
+      repeatIcon.innerHTML = `<svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-e2c87f" data-testid="RepeatOneIcon" aria-hidden="true"><path fill-rule="evenodd" d="M5.254 11.999c0-3.478 2.969-4.466 5.46-4.682a.624.624 0 0 0 .572-.624v-.14a.617.617 0 0 0-.186-.444L9.168 4.192l-.882.89 1.149 1.14-.203.041C5.859 6.95 4 8.986 4 12c0 3.374 2.365 5.528 6.494 5.92l.11-1.248c-2.467-.235-5.35-1.244-5.35-4.672Zm14.746 0c0-3.374-2.365-5.528-6.494-5.92l-.11 1.248c2.467.236 5.35 1.245 5.35 4.672 0 3.478-2.97 4.466-5.46 4.682a.623.623 0 0 0-.572.625v.151c0 .167.068.33.187.447l1.932 1.904.88-.893-1.154-1.138.204-.041C18.14 17.052 20 15.014 20 11.999Zm-7.004-2.772v5.678h-1.254V10.63l-1.064 1.063-.886-.885 1.58-1.58h1.624Z" clip-rule="evenodd"></path></svg>`
+      localStorage.setItem("repeat", "self")
+  } else {
+    repeatIcon.style.fill = "white"
+    repeatIcon.innerHTML = `<svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-ob9m0y" data-testid="RepeatIcon" aria-hidden="true"><path fill-rule="evenodd" d="M8.993 4.518c.11.065.2.118.381.234.61.391 1.019.671 1.616 1.11a1.18 1.18 0 0 1 .286 1.609 29.367 29.367 0 0 1-1.14 1.597 7.699 7.699 0 0 1-.289.36l-.11.136-.977-.785.13-.16.01-.012c.068-.083.127-.154.239-.3.132-.174.248-.33.36-.481l.17-.232-.282.058C6.683 8.205 5.254 9.709 5.254 12c0 3.32 2.882 4.298 5.347 4.527l-.104 1.25C6.367 17.393 4 15.292 4 12c0-2.945 1.869-4.932 5.26-5.597l.261-.051-.221-.15c-.186-.125-.38-.251-.603-.395a8.155 8.155 0 0 0-.349-.213l-.168-.1.649-1.073.164.097Zm4.51 1.706C17.634 6.606 20 8.707 20 12c0 2.902-1.818 4.88-5.118 5.572l-.255.053.216.147c.197.134.403.268.64.421.17.108.249.155.352.214l.166.1-.649 1.072-.16-.095-.011-.006a9.166 9.166 0 0 1-.375-.23 27.485 27.485 0 0 1-1.616-1.11 1.18 1.18 0 0 1-.285-1.609c.4-.598.687-1.001 1.14-1.596.126-.165.193-.246.27-.34l.018-.021.112-.136.977.785-.132.16c-.072.088-.13.159-.246.311-.12.157-.226.298-.328.435l-.176.24.29-.067c2.563-.587 3.916-2.074 3.916-4.3 0-3.32-2.881-4.298-5.347-4.527l.105-1.25Z" clip-rule="evenodd"></path></svg>`
+    localStorage.setItem("repeat", "no")
+  }
+}
+
+
+function setPlayerService(name, cover, trackPath, artists, trackId, toPlay) {
   let playerImage = document.getElementById("player-image");
   let playerMusicName = document.getElementById("player-music-name");
   let playerArtist = document.getElementById("player-artist");
@@ -133,7 +159,7 @@ function setPlayerService(name, cover, trackPath, artists, trackId) {
   playerTimeSlider.value = 0
   let isPlaying = false;
 
-  const myAudio =  new Audio(trackPath);
+  let myAudio =  new Audio(trackPath);
   myAudio.addEventListener("loadeddata", () => {
     let audioDuration = Math.floor(myAudio.duration)
     const formatTime = (time) => (time < 10 ? `0${time}` : time)
@@ -157,6 +183,33 @@ function setPlayerService(name, cover, trackPath, artists, trackId) {
     }
   })
 
+  myAudio.addEventListener("ended", ({target}) => {
+    let track = localStorage.getItem("trackId");
+    let repeat = localStorage.getItem("repeat");
+    let playerCheck = document.getElementById("check-player");
+    if (!playerCheck.checked) {
+      if (track === trackId) {
+        console.log(repeat)
+        if (repeat === "no") {
+          myAudio.pause()
+          isPlaying = false
+          changeIcon()
+        } else if (repeat === "album") {
+          switchTrackRight()
+          let trackId = localStorage.getItem("trackId");
+          styleActiveTrack(trackId)
+        } else if (repeat === "self") {
+          myAudio.currentTime = 0
+          myAudio.play()
+        }
+      }
+    }
+    else {
+        myAudio.currentTime = 0
+        myAudio.pause()
+    }
+  })
+
   playerImage.src = cover;
   playerMusicName.textContent = name;
   playerArtist.textContent = artists.join(", ");
@@ -172,10 +225,11 @@ function setPlayerService(name, cover, trackPath, artists, trackId) {
 
   function HandlePlayer() {
     let isHandled = localStorage.getItem("isHandled");
+    let track = localStorage.getItem("trackId");
     if (isPlaying) {
       myAudio.pause()
       isPlaying = false
-    } else if(isHandled === "0") {
+    } else if(isHandled === "0" && trackId === track) {
       myAudio.play()
       isPlaying = true
     }
@@ -194,14 +248,63 @@ function setPlayerService(name, cover, trackPath, artists, trackId) {
       }
   }
 
+  if (toPlay) {
+    isPlaying = true
+    changeIcon()
+    myAudio.play()
+  }
+
+  let nextTrack = document.getElementById("next-track");
+  let prevTrack = document.getElementById("prev-track");
+
+  function switchTrackRight() {
+    myAudio.pause()
+    myAudio = null
+    changeIcon()
+    let playlistId = localStorage.getItem("playlistId");
+    let tracksQueue = localStorage.getItem("tracksQueue");
+    setPlayerController(playlistId, tracksQueue.split(",")[1], true).then()
+    localStorage.setItem("trackId", tracksQueue.split(",")[1]);
+    localStorage.setItem("tracksQueue", [...tracksQueue.split(",").slice(1), tracksQueue.split(",")[0]].toString());
+  }
+
+  nextTrack.addEventListener("click", () => {
+    let playerCheck = document.getElementById("check-player");
+    if (!playerCheck.checked) {
+      switchTrackRight()
+      let trackId = localStorage.getItem("trackId");
+      styleActiveTrack(trackId)
+    }
+  })
+
+  function switchTrackLeft() {
+    myAudio.pause()
+    myAudio = null
+    changeIcon()
+    let playlistId = localStorage.getItem("playlistId");
+    let tracksQueue = localStorage.getItem("tracksQueue");
+    setPlayerController(playlistId, tracksQueue.split(",")[tracksQueue.split(",").length - 1], true).then()
+    localStorage.setItem("trackId", tracksQueue.split(",")[tracksQueue.split(",").length - 1]);
+    localStorage.setItem("tracksQueue", [tracksQueue.split(",")[tracksQueue.split(",").length - 1], ...tracksQueue.split(",").slice(0, tracksQueue.split(",").length - 1)].toString());
+  }
+
+  prevTrack.addEventListener("click", () => {
+    let playerCheck = document.getElementById("check-player");
+    if (!playerCheck.checked) {
+      switchTrackLeft()
+      let trackId = localStorage.getItem("trackId");
+      styleActiveTrack(trackId)
+    }
+  })
+
   playerCheck.addEventListener("change", (event) => {
     if (event.target.checked === true) {
       handlePause()
     }
   })
+
   playPauseBtn.addEventListener("click", () => {
     if (!playerCheck.checked) {
-      console.log("hello")
       HandlePlayer()
       changeIcon()
     }
