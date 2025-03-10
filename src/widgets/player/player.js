@@ -106,7 +106,6 @@ export function volumeControl() {
   window.addEventListener("click", onClickWindow);
 }
 
-
 export async function setPlayerController(playlistId, trackId, toPlay = false) {
   let playlist = await fetch("./entities/playlists.json").then(res => res.json())
   let tracks = await fetch("./entities/tracks.json").then(res => res.json())
