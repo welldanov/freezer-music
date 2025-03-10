@@ -1,3 +1,5 @@
+import {styleActiveTrack} from "../playlist-tracks/playlist-tracks.js";
+
 export function volumeControl() {
   const slider = document.getElementById('rangeSlider');
   let prevValue = slider.value
@@ -104,23 +106,23 @@ export function volumeControl() {
   window.addEventListener("click", onClickWindow);
 }
 
-export async function setPlayerController(playlistId, trackId, tracksQueue) {
+
+export async function setPlayerController(playlistId, trackId, toPlay = false) {
   let playlist = await fetch("./entities/playlists.json").then(res => res.json())
   let tracks = await fetch("./entities/tracks.json").then(res => res.json())
   let artists = await fetch("./entities/artists.json").then(res => res.json())
-
   let playlistTracks = playlist.genres[playlistId].tracks;
 
-  let currId = playlistTracks.indexOf(Number(trackId));
+
   let currName = tracks[trackId].title
   let currCover = tracks[trackId].cover
   let currPath = tracks[trackId].path
   let currArtists = (tracks[trackId].artist_id).map(id => artists[id].name);
 
-  setPlayerService(currName, currCover, currPath, currArtists, trackId);
+  setPlayerService(currName, currCover, currPath, currArtists, trackId, toPlay);
 }
 
-function setPlayerService(name, cover, trackPath, artists, trackId) {
+function setPlayerService(name, cover, trackPath, artists, trackId, toPlay) {
   let playerImage = document.getElementById("player-image");
   let playerMusicName = document.getElementById("player-music-name");
   let playerArtist = document.getElementById("player-artist");
@@ -133,7 +135,7 @@ function setPlayerService(name, cover, trackPath, artists, trackId) {
   playerTimeSlider.value = 0
   let isPlaying = false;
 
-  const myAudio =  new Audio(trackPath);
+  let myAudio =  new Audio(trackPath);
   myAudio.addEventListener("loadeddata", () => {
     let audioDuration = Math.floor(myAudio.duration)
     const formatTime = (time) => (time < 10 ? `0${time}` : time)
@@ -172,10 +174,11 @@ function setPlayerService(name, cover, trackPath, artists, trackId) {
 
   function HandlePlayer() {
     let isHandled = localStorage.getItem("isHandled");
+    let track = localStorage.getItem("trackId");
     if (isPlaying) {
       myAudio.pause()
       isPlaying = false
-    } else if(isHandled === "0") {
+    } else if(isHandled === "0" && trackId === track) {
       myAudio.play()
       isPlaying = true
     }
@@ -194,14 +197,63 @@ function setPlayerService(name, cover, trackPath, artists, trackId) {
       }
   }
 
+  if (toPlay) {
+    isPlaying = true
+    changeIcon()
+    myAudio.play()
+  }
+
+  let nextTrack = document.getElementById("next-track");
+  let prevTrack = document.getElementById("prev-track");
+
+  function switchTrackRight() {
+    myAudio.pause()
+    myAudio = null
+    changeIcon()
+    let playlistId = localStorage.getItem("playlistId");
+    let tracksQueue = localStorage.getItem("tracksQueue");
+    setPlayerController(playlistId, tracksQueue.split(",")[1], true).then()
+    localStorage.setItem("trackId", tracksQueue.split(",")[1]);
+    localStorage.setItem("tracksQueue", [...tracksQueue.split(",").slice(1), tracksQueue.split(",")[0]].toString());
+  }
+
+  nextTrack.addEventListener("click", () => {
+    let playerCheck = document.getElementById("check-player");
+    if (!playerCheck.checked) {
+      switchTrackRight()
+      let trackId = localStorage.getItem("trackId");
+      styleActiveTrack(trackId)
+    }
+  })
+
+  function switchTrackLeft() {
+    myAudio.pause()
+    myAudio = null
+    changeIcon()
+    let playlistId = localStorage.getItem("playlistId");
+    let tracksQueue = localStorage.getItem("tracksQueue");
+    setPlayerController(playlistId, tracksQueue.split(",")[tracksQueue.split(",").length - 1], true).then()
+    localStorage.setItem("trackId", tracksQueue.split(",")[tracksQueue.split(",").length - 1]);
+    localStorage.setItem("tracksQueue", [tracksQueue.split(",")[tracksQueue.split(",").length - 1], ...tracksQueue.split(",").slice(0, tracksQueue.split(",").length - 1)].toString());
+  }
+
+  prevTrack.addEventListener("click", () => {
+    let playerCheck = document.getElementById("check-player");
+    if (!playerCheck.checked) {
+      switchTrackLeft()
+      let trackId = localStorage.getItem("trackId");
+      styleActiveTrack(trackId)
+    }
+  })
+
   playerCheck.addEventListener("change", (event) => {
     if (event.target.checked === true) {
       handlePause()
     }
   })
+
   playPauseBtn.addEventListener("click", () => {
     if (!playerCheck.checked) {
-      console.log("hello")
       HandlePlayer()
       changeIcon()
     }

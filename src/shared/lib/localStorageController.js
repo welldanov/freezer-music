@@ -5,7 +5,7 @@ function renderData() {
     let trackId = localStorage.getItem("trackId");
     let playlistId = localStorage.getItem("playlistId");
     let tracksQueue = localStorage.getItem("tracksQueue");
-    setPlayerController(playlistId, trackId, tracksQueue).then();
+    setPlayerController(playlistId, trackId).then();
 }
 
 export {renderData};
