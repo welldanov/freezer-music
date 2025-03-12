@@ -191,12 +191,24 @@ export async function playlistTracksRender(playlistId, tracksIds) {
 
         myAudio.addEventListener("ended", ({target}) => {
             let playerCheck = document.getElementById("check-player");
+            let repeat = localStorage.getItem("repeat");
+            let track = localStorage.getItem("trackId");
+
             if (playerCheck.checked) {
-                switchTrackRight()
-            }
-            else {
-                myAudio.currentTime = 0
-                myAudio.pause()
+              if (track === trackId) {
+                if (repeat === "no") {
+                  myAudio.pause()
+                  isPlaying = false
+                  changeIcon()
+                } else if (repeat === "album") {
+                  switchTrackRight()
+                  let trackId = localStorage.getItem("trackId");
+                  styleActiveTrack(trackId)
+                } else if (repeat === "self") {
+                  myAudio.currentTime = 0
+                  myAudio.play()
+                }
+              }
             }
         })
     }

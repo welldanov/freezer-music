@@ -188,7 +188,6 @@ function setPlayerService(name, cover, trackPath, artists, trackId, toPlay) {
     let playerCheck = document.getElementById("check-player");
     if (!playerCheck.checked) {
       if (track === trackId) {
-        console.log(repeat)
         if (repeat === "no") {
           myAudio.pause()
           isPlaying = false
