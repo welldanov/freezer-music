@@ -13,13 +13,13 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	flex: 0 0 33%;
 	gap: 16px;
 	background-color: var(--background-neutral-secondary);
 	z-index: 5;
 }
 
 .player-left {
+	flex-shrink: 1;
 	width: 100%;
 	height: 48px;
 	justify-content: flex-start;
@@ -160,10 +160,6 @@
 	height: 20px;
 	align-items: center;
 	justify-content: center;
-
-	@media (max-width: 1440px) {
-		width: 100%;
-	}
 }
 
 .player-center__time_left {
@@ -235,6 +231,7 @@
 }
 
 .player-right {
+	flex-shrink: 1;
 	width: 100%;
 	height: 32px;
 	display: flex;
