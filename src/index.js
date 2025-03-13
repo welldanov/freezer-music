@@ -1,5 +1,5 @@
 import {renderFunction} from "./shared/lib/renderFunction.js";
-import {setRepeat, volumeControl} from "./widgets/player/player.js";
+import {setRepeat ,volumeControl} from "./widgets/player/player.js";
 import {genreCollectionRender} from "./widgets/genre-playlists/genre-playlists.js";
 import {renderData} from "./shared/lib/localStorageController.js";
 import {addListenersSidebar} from "./shared/components/sidebar/sidebar.js";
@@ -14,6 +14,7 @@ function renderFirstLaunch() {
         volumeControl();
         renderData(true);
         setRepeat();
+        // setShuffle();
     });
     renderFunction('./pages/explore-page/explore-page.html', 'main-body-container').then(() => {
         genreCollectionRender().then();
@@ -33,6 +34,7 @@ export function renderExplorePage() {
     document.getElementById("favorites-page").className = "page-link-item";
 
     document.getElementById("explore-page").classList.add("page-link-item_chosen");
+    document.getElementById("main-body-container").innerHTML = "";
     renderFunction('./pages/explore-page/explore-page.html', 'main-body-container').then(() => {
         genreCollectionRender().then();
     });

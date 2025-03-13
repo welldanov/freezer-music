@@ -19,7 +19,7 @@
 }
 
 .playlist-grid_track-active {
-    span {
+    div, span{
         color: var(--color-scheme-secondary) !important;
     }
 }
