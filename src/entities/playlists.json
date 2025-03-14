@@ -30,7 +30,7 @@
       "fans": 239000,
       "updated": "1 month ago",
       "description": "Dark, gritty, and hypnotic - it is Phonk!",
-      "tracks": []
+      "tracks": [31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
     },
     "5": {
       "name": "EDM",
@@ -38,7 +38,7 @@
       "fans": 590027,
       "updated": "23 days ago",
       "description": "Get ready to rave! Turn it up and feel the bass drop!",
-      "tracks": []
+      "tracks": [41, 42, 43, 44, 45]
     },
     "6": {
       "name": "Tropical House",
@@ -46,7 +46,7 @@
       "fans": 226448,
       "updated": "1 week ago",
       "description": "Perfect for chilling by the beach or dreaming of warmer days.",
-      "tracks": []
+      "tracks": [46, 47, 48, 49, 50]
     },
     "7": {
       "name": "Russian Rap",
@@ -54,7 +54,7 @@
       "fans": 56711,
       "updated": "12 days ago",
       "description": "Russian rap brings hard-hitting lyrics and beats that hit deep.",
-      "tracks": []
+      "tracks": [51, 52 ,53, 54, 55]
     },
     "8": {
       "name": "Indie",
@@ -62,7 +62,7 @@
       "fans": 1056711,
       "updated": "4 weeks ago",
       "description": "Heartfelt lyrics, soothing melodies, and a touch of magic.",
-      "tracks": []
+      "tracks": [56, 57, 58, 59, 60]
     }
   }
 }

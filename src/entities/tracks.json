@@ -362,5 +362,345 @@
       59
     ],
     "duration": 133.903678
+  },
+  "31": {
+    "title": "krushed!",
+    "album": "krushed!",
+    "release_date": "05/08/2023",
+    "cover": "./shared/assets/img/covers/track-covers/$werve - krushed!.jpg",
+    "path": "./shared/assets/music/phonk/$werve - krushed!.mp3",
+    "artist_id": [
+      60
+    ],
+    "duration": 98.220408
+  },
+  "32": {
+    "title": "Close Eyes",
+    "album": "Close Eyes",
+    "release_date": "11/02/2022",
+    "cover": "./shared/assets/img/covers/track-covers/DVRST - Close Eyes.jpg",
+    "path": "./shared/assets/music/phonk/DVRST - Close Eyes.mp3",
+    "artist_id": [
+      61
+    ],
+    "duration": 132.388571
+  },
+  "33": {
+    "title": "CUTE DEPRESSED",
+    "album": "CUTE DEPRESSED",
+    "release_date": "01/03/2023",
+    "cover": "./shared/assets/img/covers/track-covers/dyan dxddy - CUTE DEPRESSED.jpg",
+    "path": "./shared/assets/music/phonk/dyan dxddy - CUTE DEPRESSED.mp3",
+    "artist_id": [
+      62
+    ],
+    "duration": 97.018776
+  },
+  "34": {
+    "title": "NITE",
+    "album": "NITE",
+    "release_date": "21/01/2024",
+    "cover": "./shared/assets/img/covers/track-covers/ELVEN DIOR - NITE.jpg",
+    "path": "./shared/assets/music/phonk/ELVEN DIOR - NITE.mp3",
+    "artist_id": [
+      63
+    ],
+    "duration": 98.507755
+  },
+  "35": {
+    "title": "Haunted House",
+    "album": "Haunted House",
+    "release_date": "29/11/2021",
+    "cover": "./shared/assets/img/covers/track-covers/Kaito Shoma - Haunted House.jpg",
+    "path": "./shared/assets/music/phonk/Kaito Shoma - Haunted House.mp3",
+    "artist_id": [
+      64
+    ],
+    "duration": 223.164082
+  },
+  "36": {
+    "title": "Live Another Day",
+    "album": "Live Another Day",
+    "release_date": "11/03/2020",
+    "cover": "./shared/assets/img/covers/track-covers/KORDHELL - Live Another Day.jpg",
+    "path": "./shared/assets/music/phonk/KORDHELL - Live Another Day.mp3",
+    "artist_id": [
+      65
+    ],
+    "duration": 133.642449
+  },
+  "37": {
+    "title": "Murder In My Mind",
+    "album": "Murder In My Mind",
+    "release_date": "02/02/2023",
+    "cover": "./shared/assets/img/covers/track-covers/KORDHELL - Murder In My Mind.jpg",
+    "path": "./shared/assets/music/phonk/KORDHELL - Murder In My Mind.mp3",
+    "artist_id": [
+      65
+    ],
+    "duration": 145.031837
+  },
+  "38": {
+    "title": "I Can Fly",
+    "album": "I Can Fly",
+    "release_date": "03/01/2024",
+    "cover": "./shared/assets/img/covers/track-covers/SØMATIC - I Can Fly.jpg",
+    "path": "./shared/assets/music/phonk/SØMATIC - I Can Fly.wav",
+    "artist_id": [
+      14
+    ],
+    "duration": 159.272744
+  },
+  "39": {
+    "title": "ANUBIS",
+    "album": "ANUBIS",
+    "release_date": "23/06/2021",
+    "cover": "./shared/assets/img/covers/track-covers/KUTE & RAIZHELL - ANUBIS.jpg",
+    "path": "./shared/assets/music/phonk/KUTE & RAIZHELL - ANUBIS.mp3",
+    "artist_id": [
+      66,
+      67
+    ],
+    "duration": 131.500408
+  },
+  "40": {
+    "title": "AVOID ME",
+    "album": "AVOID ME",
+    "release_date": "10/03/2021",
+    "cover": "./shared/assets/img/covers/track-covers/KUTE - AVOID ME.jpg",
+    "path": "./shared/assets/music/phonk/KUTE - AVOID ME.mp3",
+    "artist_id": [
+      66
+    ],
+    "duration": 105.822041
+  },
+  "41": {
+    "title": "We Found Love",
+    "album": "We Found Love",
+    "release_date": "23/01/2008",
+    "cover": "./shared/assets/img/covers/track-covers/Calvin Harris - We Found Love.jpg",
+    "path": "./shared/assets/music/edm/Calvin Harris - We Found Love.mp3",
+    "artist_id": [
+      68,
+      69
+    ],
+    "duration": 215.562449
+  },
+  "42": {
+    "title": "Infinity",
+    "album": "Infinity",
+    "release_date": "13/011/2010",
+    "cover": "./shared/assets/img/covers/track-covers/Jaymes Young - Infinity.jpg",
+    "path": "./shared/assets/music/edm/Jaymes Young - Infinity.mp3",
+    "artist_id": [
+      70
+    ],
+    "duration": 237.766531
+  },
+  "43": {
+    "title": "Fight Back With Love Tonight",
+    "album": "Fight Back With Love Tonight",
+    "release_date": "21/10/2007",
+    "cover": "./shared/assets/img/covers/track-covers/Kush Kush - Fight Back With Love Tonight.jpg",
+    "path": "./shared/assets/music/edm/Kush Kush - Fight Back With Love Tonight.mp3",
+    "artist_id": [
+      71
+    ],
+    "duration": 206.319456
+  },
+  "44": {
+    "title": "Leon On",
+    "album": "Peace Is The Mission : Extended",
+    "release_date": "27/11/2015",
+    "cover": "./shared/assets/img/covers/track-covers/Major Lazer - Lean On.jpg",
+    "path": "./shared/assets/music/edm/Major Lazer - Lean On.mp3",
+    "artist_id": [
+      72,
+      73,
+      74
+    ],
+    "duration": 176.587755
+  },
+  "45": {
+    "title": "Titans",
+    "album": "Music Is The Weapon (Reloaded)",
+    "release_date": "26/03/2021",
+    "cover": "./shared/assets/img/covers/track-covers/Major Lazer - Titans.jpg",
+    "path": "./shared/assets/music/edm/Major Lazer - Titans.mp3",
+    "artist_id": [
+      72,
+      75,
+      76,
+      77
+    ],
+    "duration": 199.209796
+  },
+  "46": {
+    "title": "Baianá",
+    "album": "Baianá",
+    "release_date": "16/06/2022",
+    "cover": "./shared/assets/img/covers/track-covers/Bakermat - Baiana.jpg",
+    "path": "./shared/assets/music/tropical house/Bakermat - Baiana.mp3",
+    "artist_id": [
+      78
+    ],
+    "duration": 182.230204
+  },
+  "47": {
+    "title": "My Way",
+    "album": "My Way",
+    "release_date": "05/11/2007",
+    "cover": "./shared/assets/img/covers/track-covers/Calvin Harris - My Way.jpg",
+    "path": "./shared/assets/music/tropical house/Calvin Harris - My Way.mp3",
+    "artist_id": [
+      69
+    ],
+    "duration": 211.2032
+  },
+  "48": {
+    "title": "Whatever",
+    "album": "Whatever",
+    "release_date": "23/01/2009",
+    "cover": "./shared/assets/img/covers/track-covers/Kygo, Ava Max - Whatever.jpg",
+    "path": "./shared/assets/music/tropical house/Kygo, Ava Max - Whatever.mp3",
+    "artist_id": [
+      79,
+      80
+    ],
+    "duration": 178.311837
+  },
+  "49": {
+    "title": "Higher Love",
+    "album": "Higher Love",
+    "release_date": "21/08/2018",
+    "cover": "./shared/assets/img/covers/track-covers/Kygo, Whitney Houston - Higher Love.jpg",
+    "path": "./shared/assets/music/tropical house/Kygo, Whitney Houston - Higher Love.mp3",
+    "artist_id": [
+      79,
+      81
+    ],
+    "duration": 228.310204
+  },
+  "50": {
+    "title": "In My Bones",
+    "album": "In My Bones",
+    "release_date": "21/10/2011",
+    "cover": "./shared/assets/img/covers/track-covers/Lost Frequencies, David Kushner - In My Bones.jpg",
+    "path": "./shared/assets/music/tropical house/Lost Frequencies, David Kushner - In My Bones.mp3",
+    "artist_id": [
+      82,
+      83
+    ],
+    "duration": 156.212245
+  },
+  "51": {
+    "title": "Kosandra",
+    "album": "Kosandra",
+    "release_date": "22/05/2021",
+    "cover": "./shared/assets/img/covers/track-covers/Miyagi & Andy Panda - Kosandra.jpg",
+    "path": "./shared/assets/music/russian rap/Miyagi & Andy Panda - Kosandra.mp3",
+    "artist_id": [
+      84
+    ],
+    "duration": 221.466122
+  },
+  "52": {
+    "title": "Патрон",
+    "album": "Патрон",
+    "release_date": "13/11/2020",
+    "cover": "./shared/assets/img/covers/track-covers/Miyagi & Andy Panda - Патрон.jpg",
+    "path": "./shared/assets/music/russian rap/Miyagi & Andy Panda - Патрон.mp3",
+    "artist_id": [
+      84
+    ],
+    "duration": 225.044898
+  },
+  "53": {
+    "title": "Angel",
+    "album": "Angel",
+    "release_date": "10/01/2018",
+    "cover": "./shared/assets/img/covers/track-covers/Miyagi - Angel.jpg",
+    "path": "./shared/assets/music/russian rap/Miyagi - Angel.mp3",
+    "artist_id": [
+      85
+    ],
+    "duration": 202.396735
+  },
+  "54": {
+    "title": "Minor",
+    "album": "Minor",
+    "release_date": "26/07/2021",
+    "cover": "./shared/assets/img/covers/track-covers/Miyagi - Minor.jpg",
+    "path": "./shared/assets/music/russian rap/Miyagi - Minor.mp3",
+    "artist_id": [
+      85
+    ],
+    "duration": 175.830204
+  },
+  "55": {
+    "title": "Таблетка",
+    "album": "Таблетка",
+    "release_date": "20/09/2024",
+    "cover": "./shared/assets/img/covers/track-covers/PLOHOYPAREN - Таблетка.jpg",
+    "path": "./shared/assets/music/russian rap/PLOHOYPAREN - Таблетка.mp3",
+    "artist_id": [
+      86
+    ],
+    "duration": 89.835102
+  },
+  "56": {
+    "title": "Treehouse",
+    "album": "Treehouse",
+    "release_date": "01/01/2016",
+    "cover": "./shared/assets/img/covers/track-covers/Alex G - Treehouse.jpg",
+    "path": "./shared/assets/music/indie/Alex G - Treehouse.mp3",
+    "artist_id": [
+      87
+    ],
+    "duration": 158.066939
+  },
+  "57": {
+    "title": "Genesis",
+    "album": "Genesis",
+    "release_date": "15/09/2020",
+    "cover": "./shared/assets/img/covers/track-covers/Grimes - Genesis.jpg",
+    "path": "./shared/assets/music/indie/Grimes - Genesis.mp3",
+    "artist_id": [
+      88
+    ],
+    "duration": 255.425306
+  },
+  "58": {
+    "title": "Vision - Slowed",
+    "album": "Vision",
+    "release_date": "17/12/2019",
+    "cover": "./shared/assets/img/covers/track-covers/Hucci - Vision [Slowed Version].jpg",
+    "path": "./shared/assets/music/indie/Hucci - Vision [Slowed Version].mp3",
+    "artist_id": [
+      89
+    ],
+    "duration": 299.62449
+  },
+  "59": {
+    "title": "NOOKS OF PILTOVER",
+    "album": "NOOKS OF PILTOVER",
+    "release_date": "05/10/2024",
+    "cover": "./shared/assets/img/covers/track-covers/SØMATIC - NOOKS OF PILTOVER.jpg",
+    "path": "./shared/assets/music/indie/SØMATIC - NOOKS OF PILTOVER.wav",
+    "artist_id": [
+      14
+    ],
+    "duration": 90
+  },
+  "60": {
+    "title": "Harpy Hare",
+    "album": "Harpy Hare",
+    "release_date": "23/06/2021",
+    "cover": "./shared/assets/img/covers/track-covers/Yaelokre - Harpy Hare.jpg",
+    "path": "./shared/assets/music/indie/Yaelokre - Harpy Hare.mp3",
+    "artist_id": [
+      90
+    ],
+    "duration": 180.976327
   }
 }
