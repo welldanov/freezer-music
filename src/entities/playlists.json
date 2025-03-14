@@ -14,7 +14,7 @@
       "fans": 95477,
       "updated": "1 weeks ago",
       "description": "Fast-paced beats and heavy basslines to keep your adrenaline pumping.",
-      "tracks": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+      "tracks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     },
     "3": {
       "name": "Hip-Hop",
@@ -22,7 +22,7 @@
       "fans": 123780,
       "updated": "1 day ago",
       "description": "From old-school classics to modern bangers! Keep it real, keep it fresh.",
-      "tracks": [21, 22, 23, 24, 25 ,26, 27, 28, 29, 30]
+      "tracks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     },
     "4": {
       "name": "Phonk",
@@ -30,7 +30,7 @@
       "fans": 239000,
       "updated": "1 month ago",
       "description": "Dark, gritty, and hypnotic - it is Phonk!",
-      "tracks": []
+      "tracks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     },
     "5": {
       "name": "EDM",
@@ -38,7 +38,7 @@
       "fans": 590027,
       "updated": "23 days ago",
       "description": "Get ready to rave! Turn it up and feel the bass drop!",
-      "tracks": []
+      "tracks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     },
     "6": {
       "name": "Tropical House",
@@ -46,7 +46,7 @@
       "fans": 226448,
       "updated": "1 week ago",
       "description": "Perfect for chilling by the beach or dreaming of warmer days.",
-      "tracks": []
+      "tracks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     },
     "7": {
       "name": "Russian Rap",
@@ -54,7 +54,7 @@
       "fans": 56711,
       "updated": "12 days ago",
       "description": "Russian rap brings hard-hitting lyrics and beats that hit deep.",
-      "tracks": []
+      "tracks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     },
     "8": {
       "name": "Indie",
@@ -62,7 +62,7 @@
       "fans": 1056711,
       "updated": "4 weeks ago",
       "description": "Heartfelt lyrics, soothing melodies, and a touch of magic.",
-      "tracks": []
+      "tracks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     }
   }
 }
